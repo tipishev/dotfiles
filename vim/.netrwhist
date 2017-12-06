@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/tipishev/projects/hermes/ENV/.ipython'
+let g:netrw_dirhist_2='/home/tipishev/projects/hermes/core/migrations'
+let g:netrw_dirhist_3='/home/tipishev/projects/hermes/audit'
+let g:netrw_dirhist_4='/home/tipishev/projects/scs/sportamor/catalog/models'
+let g:netrw_dirhist_5='/home/tipishev/projects/scs/sportamor/ecom/models'
+let g:netrw_dirhist_6='/home/tipishev/projects/scs/tests/wms/test_api'
+let g:netrw_dirhist_7='/home/tipishev/projects/scs/sportamor/catalog/models'
+let g:netrw_dirhist_8='/home/tipishev/projects/scs/tests'
