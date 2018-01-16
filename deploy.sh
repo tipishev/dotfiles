@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="~/dotfiles"
-DOTFILES="tmux.conf vimrc bash*"
+DOTFILES="tmux.conf vimrc bash* flake8"
 
 cd
 
