@@ -213,3 +213,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" use xmllint for aligning XML
+:set equalprg=xmllint\ --format\ -
