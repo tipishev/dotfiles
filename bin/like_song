@@ -1,0 +1,3 @@
+SONG=$(cmus-remote -C "status" | grep stream | sed -e "s/stream //")
+echo $SONG
+echo $SONG >> ~/Music/nice_tunes.txt
