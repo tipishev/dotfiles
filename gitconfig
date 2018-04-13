@@ -1,0 +1,25 @@
+[user]
+	email = tipishev@gmail.com
+	name = Timofey Tipishev
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[push]
+	default = simple
+[core]
+	editor = vim
+	excludesfile = /home/tipishev/.gitignore_global
+[credential]
+	helper = cache --timeout=360000
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ctags = !.git/hooks/ctags
+[log]
+	date = relative
+[init]
+	templatedir = ~/.git_template
+[rerere]
+	enabled = true
