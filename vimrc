@@ -48,8 +48,11 @@ let g:taboo_renamed_tab_format = " [%N]%l%m "
 Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py' }
 Plug 'othree/html5.vim', { 'for': ['html', 'htmldjango'] }
 Plug 'zef/vim-cycle'
+
 Plug 'majutsushi/tagbar'
 let g:tagbar_left = 1
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 
