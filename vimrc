@@ -11,10 +11,11 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
 Plug 'w0rp/ale'
-let g:ale_fixers = { 'javascript': ['standard']}
+let g:ale_fixers = { 'javascript': ['prettier_standard'], 'python': ['autopep8']}
+let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8']}
+nnoremap <silent> <F6> :ALEFix<CR>
 
 " JavaScript
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
 
 " Nerd
