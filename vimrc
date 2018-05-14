@@ -11,8 +11,8 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
 Plug 'w0rp/ale'
-let g:ale_fixers = { 'javascript': ['prettier_standard'], 'python': ['autopep8']}
-let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8']}
+let g:ale_fixers = { 'javascript': ['prettier_standard'], 'python': ['autopep8'], 'htmldjango': ['tidy']}
+let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy']}
 nnoremap <silent> <F6> :ALEFix<CR>
 
 " JavaScript
@@ -152,6 +152,8 @@ endfunction
 
 nnoremap <F5> :wa <BAR> :call RunShebang()<CR>
 imap <F5> <ESC> <F5> 
+
+nnoremap <silent> <F2> :w !setclip<CR>
 
 " Ex mode tweaks
 set history=10000 
