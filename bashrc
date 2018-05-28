@@ -133,3 +133,6 @@ export NVM_DIR="/home/tipishev/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 . django_bash_completion.sh
+
+# Garmin Connect IQ
+export PATH=$PATH:~/connectiq/bin/
