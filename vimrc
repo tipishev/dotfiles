@@ -37,6 +37,10 @@ Plug 'jtratner/vim-flavored-markdown', { 'for': 'ghmarkdown' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 
+" Monkey-C
+Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
+
+
 " search git project for word under cursor
 nnoremap <F4> :Ggrep <C-r><C-w> -- './*' ':(exclude)migrations/*'<CR><CR>:wincmd j<CR>
 
