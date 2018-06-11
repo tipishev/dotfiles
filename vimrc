@@ -226,3 +226,6 @@ noremap <Right> <NOP>
 
 " use xmllint for aligning XML
 :set equalprg=xmllint\ --format\ -
+
+" Open Quickfix item in the previously-focused window
+autocmd FileType qf nnoremap <cr> :exe 'wincmd p \| '.line('.').'cc'<cr>
