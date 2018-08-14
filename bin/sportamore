@@ -6,12 +6,8 @@ cd ~/projects/scs/
 tmux new-session -s "$session_name" -n "SCS" -d
 
 cd ~/projects/scs
-tmux new-window -t "$session_name:2" -n "Docker"
-tmux send-keys 'make runserver'
-
-cd ~
-tmux new-window -t "$session_name:3" -n "cmus"
-tmux send-keys 'cmus' c-m
+tmux new-window -t "$session_name:2" -n "Deploy"
+tmux send-keys 'ssh deploy' c-m
 
 # Select window #1 and attach to the session
 tmux select-window -t "$session_name:1"
