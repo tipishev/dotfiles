@@ -11,7 +11,7 @@
 	default = simple
 [core]
 	editor = vim
-	excludesfile = /home/tipishev/.gitignore_global
+	excludesfile = /home/user/.gitignore_global
 [credential]
 	helper = cache --timeout=360000
 [alias]

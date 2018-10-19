@@ -136,3 +136,6 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 
 # Garmin Connect IQ
 export PATH=$PATH:~/connectiq/bin/
+
+# swap Esc and CapsLock
+setxkbmap -option caps:swapescape

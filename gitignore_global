@@ -2,3 +2,5 @@
 .ropeproject/
 virtualenv
 ve
+py2venv
+py3venv
