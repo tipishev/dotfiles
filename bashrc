@@ -15,17 +15,15 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# reformat multiline commands
+shopt -s cmdhist
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# check the window size after each command
 shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -116,26 +114,51 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Run twolfson/sexy-bash-prompt
-. ~/.bash_prompt
 
+## Environment
+
+export DISPLAY=:0
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+synclient TouchpadOff=1  # disable touchpad
+setxkbmap -option caps:swapescape # swap Esc and CapsLock
 
-# tipishev's custom settings
-synclient TouchpadOff=1
+# History
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='ls:ll:l:bg:fg:history'
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
-export PATH=~/bin:$PATH
-export PATH=~/.local/bin:$PATH
+# PATHery
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
+export PATH=~:$PATH/.local/bin
+export PATH=$PATH:~/connectiq/bin/
 export JAVA_HOME=/usr/lib/jvm/default-java/
 
-export NVM_DIR="/home/tipishev/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+## User Features
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/venv/bin/activate ]] && . ~/venv/bin/activate
+[[ -f ~/.docker-machine ]] && eval "$(docker-machine env $(cat ~/.docker-machine))"
+
+# Use the system-wide host color, if avaiable.
+[[ -f /etc/host_color ]] && HOST_COLOR="$(cat /etc/host_color)"
+
+if [[ "$TERM" != "dumb" ]] && which dircolors >/dev/null ; then
+    [[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+## Shell features
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && . /usr/bin/virtualenvwrapper.sh
+
+## GUI features
+[[ $TERM == 'xterm' ]] && TITLEBAR="\[\e]2;\u@\h:\w\a\]" || TITLEBAR=""
+
+# complete django management comands
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 . django_bash_completion.sh
 
-# Garmin Connect IQ
-export PATH=$PATH:~/connectiq/bin/
+export FAB_USER="timofey.tipishev"
 
-# swap Esc and CapsLock
-setxkbmap -option caps:swapescape
+. ~/.bash_prompt
