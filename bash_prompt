@@ -1,8 +1,9 @@
 ####### Config #######
 PROMPT_ONELINE=1
 
-PROMPT_HOST=1
-HOST_COLOR="green"
+PROMPT_HOST=0
+PROMPT_USER=0
+HOST_COLOR="none"
 
 PROMPT_VIRTUALENV=1
 PROMPT_GITSTATUS=1
@@ -28,7 +29,9 @@ declare -A colors=(
 
 
 # main
-function prompt_cmd_git {
+[[ $TERM == 'xterm' ]] && TITLEBAR="\[\e]2;\u@\h:\w\a\]" || TITLEBAR=""
+
+function prompt_command_git {
     [[ -x "$GIT_STATUS_HELPER" && $PROMPT_GITSTATUS -eq 1 ]] || exit 0
 
     GIT_STATUS="$(${GIT_STATUS_HELPER})"
@@ -37,14 +40,14 @@ function prompt_cmd_git {
     && echo "${colors[none]}:${GIT_STATUS}"
 }
 
-function prompt_cmd_venv {
+function prompt_command_venv {
     [[ $PROMPT_VIRTUALENV -eq 1 ]] || exit 0
 
     [[ -n "${VIRTUAL_ENV}" ]] \
-    && echo "${colors[none]}:${colors[blue]}${VIRTUAL_ENV##*/}${colors[none]}"
+    && echo "${colors[none]}${colors[blue]}${VIRTUAL_ENV##*/}${colors[none]}"
 }
 
-function prompt_cmd_jobs {
+function prompt_command_jobs {
     [[ $PROMPT_JOBS -eq 1 ]] || exit 0
 
     NUM_JOBS=$(jobs | wc -l)
@@ -54,24 +57,30 @@ function prompt_cmd_jobs {
 
 }
 
-function prompt_cmd {
+
+function prompt_command {
     # Cursor color is determined by the exit status of the last command.
     [[ "$?" -eq 0 ]] \
     && CLR_CURSOR="${colors[green]}" \
     || CLR_CURSOR="${colors[red]}"
 
     # User color is determined by the current UID, root=red
-    [[ "${UID}" -eq 0 ]] \
-    && CLR_USER="${colors[red]}" \
-    || CLR_USER="${colors[green]}"
+    if [[ "${PROMPT_USER}" -eq 1 ]]; then
+      [[ "${UID}" -eq 0 ]] \
+      && CLR_USER="${colors[red]}" \
+      || CLR_USER="${colors[green]}"
+      STATUS_USER="${CLR_USER}\u"
+    else
+      STATUS_USER=""
+    fi
 
     [[ "${PROMPT_HOST}" -eq 1 ]] \
     && STATUS_HOST="${colors[none]}@${colors[${HOST_COLOR}]}\h" \
     || STATUS_HOST=""
 
-    STATUS_VENV="$(prompt_cmd_venv)"
-    STATUS_GIT="$(prompt_cmd_git)"
-    STATUS_JOBS="$(prompt_cmd_jobs)"
+    STATUS_VENV="$(prompt_command_venv)"
+    STATUS_GIT="$(prompt_command_git)"
+    STATUS_JOBS="$(prompt_command_jobs)"
 
     [[ "PROMPT_ONELINE" -eq 1 ]] \
     && SEPARATOR=' ' \
@@ -79,7 +88,7 @@ function prompt_cmd {
 
     PS1="\
 ${TITLEBAR}\
-${CLR_USER}\u\
+${STATUS_USER}\
 ${STATUS_HOST}\
 ${STATUS_VENV}\
 ${STATUS_GIT}\
@@ -92,4 +101,4 @@ ${colors[none]}\
 "
 }
 
-PROMPT_COMMAND=prompt_cmd
+PROMPT_COMMAND=prompt_command

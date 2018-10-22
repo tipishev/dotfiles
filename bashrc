@@ -152,8 +152,6 @@ fi
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && . /usr/bin/virtualenvwrapper.sh
 
-## GUI features
-[[ $TERM == 'xterm' ]] && TITLEBAR="\[\e]2;\u@\h:\w\a\]" || TITLEBAR=""
 
 # complete django management comands
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
