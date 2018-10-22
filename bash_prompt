@@ -61,15 +61,15 @@ function prompt_command_jobs {
 function prompt_command {
     # Cursor color is determined by the exit status of the last command.
     [[ "$?" -eq 0 ]] \
-    && CLR_CURSOR="${colors[green]}" \
-    || CLR_CURSOR="${colors[red]}"
+    && CURSOR_COLOR="${colors[green]}" \
+    || CURSOR_COLOR="${colors[red]}"
 
     # User color is determined by the current UID, root=red
     if [[ "${PROMPT_USER}" -eq 1 ]]; then
       [[ "${UID}" -eq 0 ]] \
-      && CLR_USER="${colors[red]}" \
-      || CLR_USER="${colors[green]}"
-      STATUS_USER="${CLR_USER}\u"
+      && USER_COLOR="${colors[red]}" \
+      || USER_COLOR="${colors[green]}"
+      STATUS_USER="${USER_COLOR}\u"
     else
       STATUS_USER=""
     fi
@@ -96,7 +96,7 @@ ${colors[none]}:\
 ${colors[none]}\w\
 ${STATUS_JOBS}\
 ${SEPARATOR}\
-${CLR_CURSOR}\\$ \
+${CURSOR_COLOR}\\$ \
 ${colors[none]}\
 "
 }
