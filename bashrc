@@ -2,9 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-[ -z "$PS1" ] && return
-source ~/dotfiles/bashrc-tmux
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -162,4 +159,4 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 
 export FAB_USER="timofey.tipishev"
 
-. ~/dotfiles/bash_prompt
+. ~/.bash_prompt
