@@ -11,7 +11,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
 Plug 'w0rp/ale'
-let g:ale_fixers = { 'javascript': ['prettier_standard'], 'python': ['autopep8'], 'htmldjango': ['tidy']}
+let g:ale_fixers = { 'javascript': ['prettier-standard'], 'python': ['autopep8'], 'htmldjango': ['tidy']}
 let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy']}
 nnoremap <silent> <F6> :ALEFix<CR>
 
@@ -36,6 +36,9 @@ Plug 'jtratner/vim-flavored-markdown', { 'for': 'ghmarkdown' }
 " Python
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'tell-k/vim-autopep8', { 'for': 'python' }
+Plug 'fisadev/vim-isort', { 'for': 'python' }
+let g:vim_isort_map = '<C-i>'
+
 
 " Monkey-C
 Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
@@ -229,3 +232,6 @@ noremap <Right> <NOP>
 
 " Open Quickfix item in the previously-focused window
 autocmd FileType qf nnoremap <cr> :exe 'wincmd p \| '.line('.').'cc'<cr>
+
+" open Quickfix at the bottom, spanning all splits
+au FileType qf wincmd J
