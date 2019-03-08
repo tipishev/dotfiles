@@ -17,6 +17,7 @@ nnoremap <silent> <F6> :ALEFix<CR>
 
 " JavaScript
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
 
 " Nerd
 Plug 'scrooloose/nerdcommenter'
