@@ -120,7 +120,7 @@ fi
 export DISPLAY=:0
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
-synclient TouchpadOff=1  # disable touchpad
+# synclient TouchpadOff=1  # disable touchpad
 setxkbmap -option caps:swapescape # swap Esc and CapsLock
 
 # History
@@ -155,7 +155,7 @@ fi
 
 # complete django management comands
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
-. django_bash_completion.sh
+# . django_bash_completion.sh
 
 export FAB_USER="timofey.tipishev"
 

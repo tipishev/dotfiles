@@ -44,7 +44,6 @@ let g:vim_isort_map = '<C-i>'
 " Monkey-C
 Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
 
-
 " search git project for word under cursor
 nnoremap <F4> :Ggrep <C-r><C-w> -- './*' ':(exclude)migrations/*'<CR><CR>:wincmd j<CR>
 
