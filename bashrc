@@ -155,7 +155,7 @@ fi
 
 # complete django management comands
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
-# . django_bash_completion.sh  # TODO include the script in the dotfiles
+# . django_bash_completion.sh  # TODO include the script in the dotfiles!
 
 export FAB_USER="timofey.tipishev"
 
