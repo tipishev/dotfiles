@@ -235,3 +235,5 @@ autocmd FileType qf nnoremap <cr> :exe 'wincmd p \| '.line('.').'cc'<cr>
 
 " open Quickfix at the bottom, spanning all splits
 au FileType qf wincmd J
+
+set tags^=./.git/tags;
