@@ -72,13 +72,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+z split h  # horiZontal
+# horiZontal
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# App Hotkeys
+bindsym Mod4+f exec firefox
+bindsym Mod4+e exec thunar
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
