@@ -84,6 +84,7 @@ bindsym $mod+f fullscreen toggle
 # App Hotkeys
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
+bindsym Mod4+l exec i3lock
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
