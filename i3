@@ -191,6 +191,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+	#strip_workspace_name no
+	separator_symbol "|"
 }
 
 focus_follows_mouse no
+
+hide_edge_borders both
