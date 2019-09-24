@@ -85,6 +85,7 @@ bindsym $mod+f fullscreen toggle
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
 bindsym Mod4+l exec i3lock
+bindsym --release Print exec xfce4-screenshooter -r
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
