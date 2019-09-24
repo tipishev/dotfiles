@@ -205,7 +205,6 @@ client.background       #FFFFFF
 
 bar {
   status_command i3status
-  #strip_workspace_name no
   separator_symbol "|"
   colors {
     background #000000
