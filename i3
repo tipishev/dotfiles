@@ -195,7 +195,7 @@ focus_follows_mouse no
 hide_edge_borders both
 
 # class                 border  bground text    indicator child_border
-client.focused          #4F994A #337729 #FFFFFF #2FF42F   #307729
+client.focused          #4F994A #337729 #FFFFFF #1C661C   #307729
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
