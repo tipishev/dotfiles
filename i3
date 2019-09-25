@@ -123,7 +123,7 @@ bindsym $mod+a focus parent
 set $ws1 "1:main👷"
 set $ws2 "2:chats🐈"
 set $ws3 "3:music🎶"
-set $ws4 "4"
+set $ws4 "4:personal🕴️"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
