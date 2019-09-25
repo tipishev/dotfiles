@@ -204,7 +204,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 bar {
-  font pango:monospace 14
+  font pango:noto 14
   status_command i3status
   separator_symbol "|"
   colors {
