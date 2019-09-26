@@ -81,6 +81,9 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+bindsym $mod+Tab workspace back_and_forth
+
+
 # App Hotkeys
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
@@ -124,7 +127,7 @@ set $ws1 "1:main👷"
 set $ws2 "2:chats🐈"
 set $ws3 "3:music🎶"
 set $ws4 "4:personal🕴️"
-set $ws5 "5"
+set $ws5 "5:turtle🐢"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
