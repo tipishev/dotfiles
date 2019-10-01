@@ -195,7 +195,9 @@ bindsym $mod+r mode "resize"
 
 focus_follows_mouse no
 
+# borders
 hide_edge_borders both
+# default_border pixel 5
 
 # class                 border  bground text    indicator child_border
 client.focused          #4F994A #337729 #FFFFFF #1C661C   #307729
