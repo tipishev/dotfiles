@@ -6,7 +6,7 @@ setlocal fileformat=unix
 
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 let g:autopep8_disable_show_diff=1
-au FileType python map <silent> <leader>b Oimport ipdb; ipdb.set_trace(); pass  # XXX breakpoint<esc>
+au FileType python map <silent> <leader>b Oimport ipdb; ipdb.set_trace(context=10)  # XXX breakpoint<esc>
 
 hi ColorColumn ctermbg=white
 let &colorcolumn=join(range(80,999),",")
