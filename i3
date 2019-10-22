@@ -45,6 +45,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+bindsym --whole-window $mod+button2 kill
+bindsym --whole-window $mod+button9 move left
+bindsym --whole-window $mod+button8 move right
 
 # start a terminal
 bindsym $mod+space exec i3-sensible-terminal
