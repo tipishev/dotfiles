@@ -43,6 +43,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Use media keys for controlling cmus
+bindsym XF86AudioPause exec "cmus-remote --pause"
+bindsym XF86AudioPrev exec "cmus-remote --prev"
+bindsym XF86AudioNext exec "cmus-remote --next"
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 bindsym --whole-window $mod+button3 fullscreen toggle
