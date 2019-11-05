@@ -98,7 +98,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
 bindsym Mod4+l exec i3lock
-bindsym --release Print exec xfce4-screenshooter -r
+bindsym --release Print exec --no-startup-id import ~/screenshot.png
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -219,18 +219,24 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 bar {
-  font pango:noto 14
-  status_command i3status
-  separator_symbol "|"
-  colors {
-    background #000000
-    statusline #FFFFFF
-    separator  #666666
-
-    focused_workspace  #4D9952 #317729 #FFFFFF
-    active_workspace   #333333 #222222 #FFFFFF
-    inactive_workspace #333333 #222222 #888888
-    urgent_workspace   #2F343A #900000 #FFFFFF
-    binding_mode       #2F343A #900000 #FFFFFF
-  }
+	font pango:noto 14
+	status_command i3blocks
+	tray_output primary                                               
 }
+
+# bar {
+  # font pango:noto 14
+  # status_command i3status
+  # separator_symbol "|"
+  # colors {
+    # background #000000
+    # statusline #FFFFFF
+    # separator  #666666
+
+    # focused_workspace  #4D9952 #317729 #FFFFFF
+    # active_workspace   #333333 #222222 #FFFFFF
+    # inactive_workspace #333333 #222222 #888888
+    # urgent_workspace   #2F343A #900000 #FFFFFF
+    # binding_mode       #2F343A #900000 #FFFFFF
+  # }
+# }

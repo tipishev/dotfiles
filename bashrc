@@ -120,8 +120,9 @@ fi
 export DISPLAY=:0
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
-# synclient TouchpadOff=1  # disable touchpad
+synclient TouchpadOff=0  # disable touchpad
 setxkbmap -option caps:swapescape # swap Esc and CapsLock
+setxkbmap -layout us,ru,se -option 'grp:shifts_toggle'
 
 # History
 export HISTCONTROL=ignoreboth
@@ -158,6 +159,8 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 # . django_bash_completion.sh  # TODO include the script in the dotfiles!
 
 export FAB_USER="timofey.tipishev"
+
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
 . ~/.bash_prompt
 . /usr/share/git/completion/git-completion.bash

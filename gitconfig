@@ -18,6 +18,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ctags = !.git/hooks/ctags
 	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git stash store -m \"$2\" $rev; }; _"
+	posh = push
 [log]
 	date = relative
 [init]
@@ -25,4 +26,9 @@
 [rerere]
 	enabled = true
 [help]
-	autocorrect = 10
+	autocorrect = 30
+[color "diff"]
+	new = green normal
+[filter "pep8"]
+	clean = autopep8 -
+	smudge = cat

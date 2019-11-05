@@ -7,12 +7,19 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+" Colorschmes
+Plug 'flazz/vim-colorschemes'
+Plug 'ParamagicDev/vim-medic_chalk'
+
+" JSON stuff
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
 Plug 'w0rp/ale'
-let g:ale_fixers = { 'javascript': ['prettier-standard'], 'python': ['autopep8'], 'htmldjango': ['tidy']}
+let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
 let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy']}
+
+
 nnoremap <silent> <F6> :ALEFix<CR>
 
 " JavaScript
@@ -85,6 +92,8 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 call plug#end()
 
+colorscheme medic_chalk 
+
 " enable built-in macros, mostly to make % work on {, [, etc.
 runtime macros/matchit.vim
 
@@ -100,9 +109,6 @@ set winminwidth=0
 
 set splitright
 set splitbelow
-
-colorscheme desert
-hi Search cterm=NONE ctermfg=black ctermbg=green
 
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%{&fo}][%l,%v][%p%%]
