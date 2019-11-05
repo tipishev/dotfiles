@@ -160,3 +160,4 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 export FAB_USER="timofey.tipishev"
 
 . ~/.bash_prompt
+. /usr/share/git/completion/git-completion.bash
