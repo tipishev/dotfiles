@@ -98,7 +98,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
 bindsym Mod4+l exec i3lock
-bindsym --release Print exec xfce4-screenshooter -r
+bindsym --release Print exec --no-startup-id import ~/screenshot.png
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
