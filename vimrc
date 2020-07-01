@@ -7,12 +7,16 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+" Colorschmes
+Plug 'flazz/vim-colorschemes'
+
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
 Plug 'w0rp/ale'
 let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
 let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy']}
+
 
 nnoremap <silent> <F6> :ALEFix<CR>
 
@@ -102,7 +106,7 @@ set winminwidth=0
 set splitright
 set splitbelow
 
-colorscheme desert
+colorscheme desertEx
 hi Search cterm=NONE ctermfg=black ctermbg=green
 
 set laststatus=2

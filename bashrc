@@ -160,4 +160,6 @@ alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance
 
 export FAB_USER="timofey.tipishev"
 
+[ -z "$TMUX" ] && export TERM=xterm-256color
+
 . ~/.bash_prompt
