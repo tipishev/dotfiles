@@ -9,7 +9,9 @@ call plug#begin('~/.vim/bundle')
 
 " Colorschmes
 Plug 'flazz/vim-colorschemes'
+Plug 'ParamagicDev/vim-medic_chalk'
 
+" JSON stuff
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Linting
@@ -90,6 +92,8 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 call plug#end()
 
+colorscheme medic_chalk 
+
 " enable built-in macros, mostly to make % work on {, [, etc.
 runtime macros/matchit.vim
 
@@ -105,9 +109,6 @@ set winminwidth=0
 
 set splitright
 set splitbelow
-
-colorscheme desertEx
-hi Search cterm=NONE ctermfg=black ctermbg=green
 
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%{&fo}][%l,%v][%p%%]
