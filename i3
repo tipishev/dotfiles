@@ -240,3 +240,18 @@ bar {
     # binding_mode       #2F343A #900000 #FFFFFF
   # }
 # }
+
+
+set $keyboard_layout Keyboard Layout: (r) Russian, (u) USA, (s) Svenska
+
+mode "$keyboard_layout" {
+
+  bindsym r exec --no-startup-id setxkbmap ru,us,se -option 'grp:shifts_toggle'; exec pkill -RTMIN+1 i3blocks
+  bindsym u exec --no-startup-id setxkbmap us,se,ru -option 'grp:shifts_toggle'; exec pkill -RTMIN+1 i3blocks
+  bindsym s exec --no-startup-id setxkbmap se,ru,us -option 'grp:shifts_toggle'; exec pkill -RTMIN+1 i3blocks
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+shift+Z mode "$keyboard_layout"
