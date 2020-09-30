@@ -163,4 +163,5 @@ export FAB_USER="timofey.tipishev"
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
 . ~/.bash_prompt
-. /usr/share/git/completion/git-completion.bash
+
+[ -z "/usr/share/git/completion/git-completion.bash" ] && . /usr/share/git/completion/git-completion.bash

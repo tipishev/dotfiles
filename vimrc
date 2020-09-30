@@ -17,8 +17,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Linting
 Plug 'w0rp/ale'
 let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
-let g:ale_linters = {'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy']}
-
+let g:ale_linters = { 'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy'] }
 
 nnoremap <silent> <F6> :ALEFix<CR>
 
@@ -47,6 +46,9 @@ Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 let g:vim_isort_map = '<C-i>'
 
+" Erlang
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
+Plug 'jimenezrick/vimerl', { 'for': 'erlang' }
 
 " Monkey-C
 Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
