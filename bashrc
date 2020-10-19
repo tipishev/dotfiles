@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# first things first, start graphical server
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	        exec startx
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -120,7 +125,7 @@ fi
 export DISPLAY=:0
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
-synclient TouchpadOff=0  # disable touchpad
+# synclient TouchpadOff=0  # disable touchpad
 setxkbmap -option caps:swapescape # swap Esc and CapsLock
 setxkbmap -layout us,ru,se -option 'grp:shifts_toggle'
 
