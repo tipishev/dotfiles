@@ -170,3 +170,5 @@ export FAB_USER="timofey.tipishev"
 . ~/.bash_prompt
 
 [ -z "/usr/share/git/completion/git-completion.bash" ] && . /usr/share/git/completion/git-completion.bash
+
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
