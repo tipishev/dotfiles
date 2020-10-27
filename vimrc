@@ -18,6 +18,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'w0rp/ale'
 let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
 let g:ale_linters = { 'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy'] }
+let g:ale_disable_lsp = 1
 
 nnoremap <silent> <F6> :ALEFix<CR>
 
@@ -62,7 +63,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
