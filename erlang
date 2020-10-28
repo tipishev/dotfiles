@@ -1,1 +1,3 @@
-io:format("Hello from your ~/.erlang!~n~n").
+io:format("Hello from your .erlang!~n").
+code:load_abs("/home/user/user_default").
+io:format("Loaded /home/user/user_default ~n~n").
