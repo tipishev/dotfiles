@@ -49,7 +49,7 @@ let g:vim_isort_map = '<C-i>'
 
 " Erlang
 " Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-" Plug 'jimenezrick/vimerl', { 'for': 'erlang' }
+Plug 'jimenezrick/vimerl', { 'for': 'erlang' }
 
 "" Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
