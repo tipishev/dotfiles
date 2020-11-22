@@ -207,8 +207,18 @@ focus_follows_mouse no
 
 # borders
 hide_edge_borders both
-# default_border pixel 5
+default_border normal
+# default_border pixel 2
 
+# Default Windows
+assign [class="^Slack$"] → number $ws2
+assign [class="^Skype$"] → number $ws2
+assign [class="^TelegramDesktop$"] → number $ws2
+
+assign [class="^Pavucontrol$"] → number $ws4
+
+
+# Colors
 # class                 border  bground text    indicator child_border
 client.focused          #4F994A #337729 #FFFFFF #1C661C   #307729
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
