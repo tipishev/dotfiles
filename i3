@@ -93,12 +93,11 @@ bindsym $mod+f fullscreen toggle
 
 bindsym $mod+Tab workspace back_and_forth
 
-
 # App Hotkeys
 bindsym Mod4+f exec firefox
 bindsym Mod4+e exec thunar
 bindsym Mod4+l exec i3lock
-bindsym --release Print exec --no-startup-id import ~/screenshot.png
+bindsym --release Print exec --no-startup-id import ~/$(date "+%Y-%m-%dT%H:%M:%S").png
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

@@ -127,7 +127,7 @@ VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
 # synclient TouchpadOff=0  # disable touchpad
 setxkbmap -option caps:swapescape # swap Esc and CapsLock
-setxkbmap -layout us,ru,se -option 'grp:shifts_toggle'
+setxkbmap -layout us,ru -option 'grp:shifts_toggle'
 
 # History
 export HISTCONTROL=ignoreboth
