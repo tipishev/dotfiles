@@ -139,13 +139,13 @@ export HISTFILESIZE=10000
 # PATHery
 [[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
 export PATH=~:$PATH/.local/bin
-export PATH=$PATH:~/connectiq/connectiq-sdk-lin-3.0.5-2018-11-20-1690028/bin/
-export JAVA_HOME=/usr/lib/jvm/default-java/
+# export PATH=$PATH:~/connectiq/connectiq-sdk-lin-3.0.5-2018-11-20-1690028/bin/
+# export JAVA_HOME=/usr/lib/jvm/default-java/
 
 ## User Features
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/venv/bin/activate ]] && . ~/venv/bin/activate
-[[ -f ~/.docker-machine ]] && eval "$(docker-machine env $(cat ~/.docker-machine))"
+# [[ -f ~/.docker-machine ]] && eval "$(docker-machine env $(cat ~/.docker-machine))"
 
 # Use the system-wide host color, if avaiable.
 [[ -f /etc/host_color ]] && HOST_COLOR="$(cat /etc/host_color)"
@@ -158,12 +158,9 @@ fi
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && . /usr/bin/virtualenvwrapper.sh
 
-
 # complete django management comands
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 # . django_bash_completion.sh  # TODO include the script in the dotfiles!
-
-export FAB_USER="timofey.tipishev"
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -171,4 +168,5 @@ export FAB_USER="timofey.tipishev"
 
 [ -z "/usr/share/git/completion/git-completion.bash" ] && . /usr/share/git/completion/git-completion.bash
 
+# Erlang
 export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"

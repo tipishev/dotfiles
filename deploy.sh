@@ -12,4 +12,5 @@ echo ">~/.hushlogin"
 VIM_DIR="$DIR/vim"
 echo "ln -s $VIM_DIR ~/.vim"
 
-# TODO one-liners from bin
+echo "ln -s $DIR/user_default.erl ~/user_default.erl"
+echo "ln -s $DIR/erlang ~/erlang"
