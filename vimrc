@@ -9,7 +9,7 @@ call plug#begin('~/.vim/bundle')
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
-Plug ' tipishev/vim-medic_chalk '
+Plug 'tipishev/vim-medic_chalk'
 
 " JSON stuff
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -37,7 +37,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 
-Plug 'pgdouyon/vim-nim', { 'for': 'nim' }
+" Nim
+" Plug 'pgdouyon/vim-nim', { 'for': 'nim' }
 
 Plug 'jtratner/vim-flavored-markdown', { 'for': 'ghmarkdown' }
 
@@ -259,7 +260,7 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 call plug#end()
 
-colorscheme medic_chalk 
+colorscheme medic_chalk
 
 " enable built-in macros, mostly to make % work on {, [, etc.
 runtime macros/matchit.vim
