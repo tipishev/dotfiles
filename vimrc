@@ -9,7 +9,7 @@ call plug#begin('~/.vim/bundle')
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
-Plug 'ParamagicDev/vim-medic_chalk'
+Plug ' tipishev/vim-medic_chalk '
 
 " JSON stuff
 Plug 'elzr/vim-json', { 'for': 'json' }
