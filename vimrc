@@ -11,9 +11,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'flazz/vim-colorschemes'
 Plug 'tipishev/vim-medic_chalk'
 
-" JSON stuff
-Plug 'elzr/vim-json', { 'for': 'json' }
-
 " Linting
 Plug 'w0rp/ale'
 let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
@@ -21,10 +18,6 @@ let g:ale_linters = { 'javascript': ['standard'], 'python': ['flake8'], 'htmldja
 let g:ale_disable_lsp = 1
 
 nnoremap <silent> <F6> :ALEFix<CR>
-
-" JavaScript
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'pangloss/vim-javascript'
 
 " Nerd
 Plug 'scrooloose/nerdcommenter'
@@ -37,20 +30,26 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 
-" Nim
-" Plug 'pgdouyon/vim-nim', { 'for': 'nim' }
+""" Language Specific
 
+" JavaScript
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
+
+" JSON
+Plug 'elzr/vim-json', { 'for': 'json' }
+
+" Markdown
 Plug 'jtratner/vim-flavored-markdown', { 'for': 'ghmarkdown' }
 
 " Python
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
+" Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py' }
 let g:vim_isort_map = '<C-i>'
 
 " Erlang
-" Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'jimenezrick/vimerl', { 'for': 'erlang' }
 
 "" Language Server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -215,9 +214,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-
 " Monkey-C
 Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
+
+""" Interface tweaks
 
 " search git project for word under cursor
 nnoremap <F4> :Ggrep <C-r><C-w> -- './*' ':(exclude)migrations/*'<CR><CR>:wincmd j<CR>
@@ -228,7 +228,6 @@ autocmd QuickFixCmdPost *grep* bot cwindow | setlocal wrap | nnoremap <buffer> <
 Plug 'gcmt/taboo.vim'
 let g:taboo_tab_format = " [%N]%f%m "
 let g:taboo_renamed_tab_format = " [%N]%l%m "
-" Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py' }
 Plug 'othree/html5.vim', { 'for': ['html', 'htmldjango'] }
 Plug 'zef/vim-cycle'
 
