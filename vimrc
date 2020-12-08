@@ -198,47 +198,11 @@ set ttimeout
 " allow backspace-deleting a previous line 
 set backspace=2
 
-" TODO move to haskell filetype
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
-
 " disable arrow buttons to make life more miserable
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" use xmllint for aligning XML
-" :set equalprg=xmllint\ --format\ -
 
 " Open Quickfix item in the previously-focused window
 autocmd FileType qf nnoremap <cr> :exe 'wincmd p \| '.line('.').'cc'<cr>
