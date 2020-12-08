@@ -12,7 +12,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tipishev/vim-medic_chalk'
 
 " Linting
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['autopep8'], 'htmldjango': ['tidy'], 'sql': ['pgformatter'] }
 let g:ale_linters = { 'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy'] }
 let g:ale_disable_lsp = 1
