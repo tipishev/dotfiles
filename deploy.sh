@@ -10,10 +10,7 @@ echo ">~/.hushlogin"
 
 # Vim configuration
 VIM_DIR="$DIR/vim"
-echo "mkdir ~/.vim"
-echo "cp -aT $VIM_DIR/ftdetect/ ~/.vim/ftdetect/"
-echo "cp -aT $VIM_DIR/ftplugin/ ~/.vim/ftplugin/"
-echo "cp -aT $VIM_DIR/UltiSnips/ ~/.vim/UltiSnips/"
+echo "ln -s $VIM_DIR ~/.vim"
 
-# TODO one-liners from bin
-# TODO vim dir
+echo "ln -s $DIR/user_default.erl ~/user_default.erl"
+echo "ln -s $DIR/erlang ~/erlang"
