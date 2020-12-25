@@ -20,7 +20,7 @@ let g:ale_fixers = { 'javascript': ['standard'], 'json': ['jq'], 'python': ['aut
 let g:ale_linters = { 'javascript': ['standard'], 'python': ['flake8'], 'htmldjango': ['tidy'] }
 let g:ale_disable_lsp = 1
 
-nnoremap <silent> <F6> :ALEFix<CR>
+" nnoremap <silent> <F6> :ALEFix<CR>
 
 " JavaScript
 Plug 'mustache/vim-mustache-handlebars'
