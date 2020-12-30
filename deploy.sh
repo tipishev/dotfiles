@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="~/dotfiles"
-DOTFILES="tmux.conf vimrc flake8 gitconfig Xmodmap gitignore_global ctags bash_logout bash_prompt bash_profile bashrc bash_aliases lynxrc i3 erlang user_default"
+DOTFILES="tmux.conf vimrc flake8 gitconfig Xmodmap gitignore_global ctags bash_logout bash_prompt bash_profile bashrc bash_aliases lynxrc i3 erlang user_default kerlrc"
 
 cd
 

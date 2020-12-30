@@ -1,0 +1,4 @@
+KERL_BUILD_BACKEND="git"
+KERL_CONFIGURE_OPTIONS="--without-javac --with-dynamic-trace=systemtap"
+KERL_DEFAULT_INSTALL_DIR="$HOME/kerl"
+KERL_ENABLE_PROMPT="y"
