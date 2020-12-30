@@ -138,7 +138,7 @@ export HISTFILESIZE=10000
 
 # PATHery
 [[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
-export PATH=~:$PATH/.local/bin
+[[ -d "$HOME/.cache/rebar3/bin" ]] && export PATH="$HOME/.cache/rebar3/bin:$PATH"
 # export PATH=$PATH:~/connectiq/connectiq-sdk-lin-3.0.5-2018-11-20-1690028/bin/
 # export JAVA_HOME=/usr/lib/jvm/default-java/
 
