@@ -12,8 +12,38 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tipishev/vim-medic_chalk'
 
 " Linting
-Plug 'dense-analysis/ale'
+
+" YouCompleteMe
+Plug 'ycm-core/YouCompleteMe' ", { 'do': './install.py' }
+let g:ycm_keep_logfiles = 1
+let g:ycm_log_level = 'debug'
+
+Plug 'tipishev-kivra/ale'
+" let g:ale_pattern_options = {'\.erl$': {'ale_enabled': 0}}
 nnoremap <silent> <F6> :ALEFix<CR>
+let g:ale_linters = {'erlang': ['dialyzer']}
+let g:ale_erlang_erlc_options = "-I './include' -pa './_build/default/lib/*/ebin' -I './_build/default/lib/*/src' -I './_build/default/lib/*/include' -I './_build/default/test/*/test'"
+let g:ale_erlang_dialyzer_options = "-I ./_build/default/lib -I ./include -Wunmatched_returns -Werror_handling -Wrace_conditions -Wno_undefined_callbacks %s"
+
+" dialyzer -I ./_build/default/lib/ -I ./include -n --plt
+" /home/user/kivra/kivra_core/_build/default/rebar3_22.3.4.13_plt
+" -Wunmatched_returns -Werror_handling -Wrace_conditions -Wunderspecs
+"  /home/user/kivra/kivra_core/src/rest/rest_actor_file.erl
+
+
+" Language Server Protocol aka LSP
+" Let's see if it's a viable replacement for CoC.nvim
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/.cache/vim-lsp/log/vim-lsp.log')
+nmap <silent> gd :LspDefinition <CR>
+
+
+let g:lsp_settings = {
+\ 'erlang-ls': {'cmd': $HOME . '/.local/share/vim-lsp-settings/servers/erlang-ls/_build/default/bin/erlang_ls --transport stdio '}
+\}
 
 " Nerd
 Plug 'scrooloose/nerdcommenter'
@@ -42,10 +72,12 @@ Plug 'jtratner/vim-flavored-markdown', { 'for': 'ghmarkdown' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
-" Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py' }
 let g:vim_isort_map = '<C-i>'
 
 " Erlang
+
+" Aligning `=` and `->` in Erlang
+Plug 'godlygeek/tabular'
 
 " Monkey-C
 Plug 'tipishev/vim-monkey-c', { 'for': 'monkey-c' }
@@ -207,3 +239,8 @@ autocmd FileType qf nnoremap <cr> :exe 'wincmd p \| '.line('.').'cc'<cr>
 au FileType qf wincmd J
 
 set tags^=./.git/tags;
+
+" Commands
+
+" Close all buffers except the current one
+command! BufOnly execute '%bdelete|edit #|normal `"'

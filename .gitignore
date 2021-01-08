@@ -1,5 +1,6 @@
 vim/bundle
 vim/autoload
+vim/.netrwhist
 
 cmus/autosave
 cmus/cache
