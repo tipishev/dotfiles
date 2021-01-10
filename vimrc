@@ -33,7 +33,7 @@ let g:ale_erlang_dialyzer_options = "-I ./_build/default/lib -I ./include -Wunma
 
 " Language Server Protocol aka LSP
 " Let's see if it's a viable replacement for CoC.nvim
-Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/vim-lsp' ", { 'do': 'mkdir -p $HOME/.cache/vim-lsp/log' }
 Plug 'mattn/vim-lsp-settings'
 
 let g:lsp_log_verbose = 1
