@@ -158,10 +158,12 @@ noremap <F12> <Esc>:syntax sync fromstart<CR>
 imap <F12> <ESC> <F12>
 
 "" splits navigation mappings
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+
+"" Sponsored by XTerm :-/
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 nnoremap <C-left> :vertical resize -1<CR>
 nnoremap <C-right> :vertical resize +1<CR>
