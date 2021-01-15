@@ -105,7 +105,8 @@ let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 
 "let g:UltiSnipsEditSplit = "horizontal"
 "
-let g:UltiSnipsExpandTrigger = '<C-@>' " terminals send C-@ when C-Space is pressed.
+" let g:UltiSnipsExpandTrigger = '<C-@>' " non-xterm terminals send C-@ when C-Space is pressed.
+let g:UltiSnipsExpandTrigger = '<C-Space>'
 let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
 "let g:ultisnips_python_style="sphinx"
 
