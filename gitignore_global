@@ -4,3 +4,4 @@ virtualenv
 ve
 py2venv
 py3venv
+erlang_ls.config
