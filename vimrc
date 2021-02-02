@@ -18,12 +18,13 @@ Plug 'ycm-core/YouCompleteMe' ", { 'do': './install.py' }
 let g:ycm_keep_logfiles = 1
 let g:ycm_log_level = 'debug'
 
-Plug 'tipishev-kivra/ale'
+" Plug 'tipishev-kivra/ale'
+Plug 'dense-analysis/ale'
 " let g:ale_pattern_options = {'\.erl$': {'ale_enabled': 0}}
 nnoremap <silent> <F6> :ALEFix<CR>
 let g:ale_linters = {'erlang': ['dialyzer']}
 let g:ale_erlang_erlc_options = "-I './include' -pa './_build/default/lib/*/ebin' -I './_build/default/lib/*/src' -I './_build/default/lib/*/include' -I './_build/default/test/*/test'"
-let g:ale_erlang_dialyzer_options = "-I ./_build/default/lib -I ./include -Wunmatched_returns -Werror_handling -Wrace_conditions -Wno_undefined_callbacks %s"
+let g:ale_erlang_dialyzer_options = "-I ./_build/default/lib -I ./include -Wunmatched_returns -Werror_handling -Wrace_conditions -Wno_undefined_callbacks"
 
 " dialyzer -I ./_build/default/lib/ -I ./include -n --plt
 " /home/user/kivra/kivra_core/_build/default/rebar3_22.3.4.13_plt
