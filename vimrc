@@ -200,12 +200,12 @@ function! RunShebang()
 endfunction
 
 nnoremap <F5> :wa <BAR> :call RunShebang()<CR>
-imap <F5> <ESC> <F5> 
+imap <F5> <ESC> <F5>
 
 nnoremap <silent> <F2> :w !setclip<CR>
 
 " Ex mode tweaks
-set history=10000 
+set history=10000
 
 " bash-like autocompletion
 set wildmode=longest,list
@@ -227,7 +227,7 @@ set incsearch
 set notimeout
 set ttimeout
 
-" allow backspace-deleting a previous line 
+" allow backspace-deleting a previous line
 set backspace=2
 
 " disable arrow buttons to make life more miserable
