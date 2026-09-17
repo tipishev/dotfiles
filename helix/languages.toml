@@ -1,0 +1,42 @@
+[[language]]
+name = "python"
+auto-format = false
+language-servers = ["pyright", "ruff"]
+# Added line-length argument to ruff formatter
+formatter = { command = "ruff", args = ["format", "-", "--line-length", "120"] }
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = {}
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+# Configures the Ruff LSP to respect the 120 limit for linting
+config = { settings = { lineLength = 120 } }
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "python"
+args = ["-m", "debugpy.adapter"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "entrypoint", help = "The script to debug", default = "main.py" } ]
+args = { mode = "debugpy", program = "{0}" }
+
+[language-server.tinymist]
+command = "tinymist"
+config = { preview.background.enabled = true, preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--open"] }
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "jq", args = ["-M", "."] }

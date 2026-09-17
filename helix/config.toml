@@ -1,0 +1,48 @@
+theme = "acid"
+
+[editor]
+auto-pairs = false
+idle-timeout = 200
+line-number = "relative"
+
+[editor.auto-save]
+after-delay.enable = true
+focus-lost = true
+
+[editor.file-picker]
+hidden = true
+
+[editor.soft-wrap]
+enable = true
+max-indent-retain = 40
+max-wrap = 10
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[keys.normal]
+x = "select_line_below"
+X = "select_line_above"
+D = ["extend_to_line_end", "delete_selection"]
+"C-t" = [
+    "move_char_right",        # Ensure we aren't at the very start
+    "move_prev_word_start",   # Jump to start of test name
+    "move_next_word_end",     # Select to the end of the word
+    ":sh tmux split-window -v \"python -m pytest --pdbcls pudb.debugger:Debugger --pdb --capture=no %{buffer_name} -k %{selection}; read\"",
+]
+
+[keys.select]
+D = ["extend_to_line_end", "delete_selection"]
+
+[keys.normal.space]
+# Your existing git blame binding
+B = ":sh START=$(( %{cursor_line} - 10 )); [ $START -le 0 ] && START=1; git blame --date=short -w -M -L $START,$(( %{cursor_line} + 10 )) %{buffer_name}"
+
+# New binding for copying file path to macOS clipboard
+"%" = ":sh echo %{buffer_name} | pbcopy"

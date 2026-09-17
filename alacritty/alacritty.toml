@@ -1,0 +1,33 @@
+# Basic Environment
+[env]
+TERM = "xterm-256color"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/hyper.toml"
+]
+
+
+# Window Settings
+[window]
+decorations = "full"
+option_as_alt = "Both"
+opacity = 0.92
+blur = true
+
+# Font Settings
+[font]
+size = 18.0 # Adjusted slightly down from 24 for better readability
+
+[font.normal]
+family = "Menlo" # Default macOS font, looks great in Alacritty
+style = "Regular"
+
+
+# Advanced Tweaks for macOS
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
